@@ -12,6 +12,28 @@ class TestLogicGate(unittest.TestCase):
         self.assertNotEqual(lg.AND(1, 0), 1)
         self.assertNotEqual(lg.AND(0, 1), 1)
         self.assertNotEqual(lg.AND(1, 1), 0)
+
+    def test_add(self):
+        lg = LogicGate(0.5, 0.5, 0.7)
+        self.assertEqual(lg.NAND(0, 0), 1)
+        self.assertEqual(lg.NAND(1, 0), 1)
+        self.assertEqual(lg.NAND(0, 1), 1)
+        self.assertEqual(lg.NAND(1, 1), 0)
+        self.assertNotEqual(lg.NAND(0, 0), 0)
+        self.assertNotEqual(lg.NAND(1, 0), 0)
+        self.assertNotEqual(lg.NAND(0, 1), 0)
+        self.assertNotEqual(lg.NAND(1, 1), 1)
+    def test_add(self):
+        lg = LogicGate(0.5, 0.5, 0.7)
+        self.assertEqual(lg.OR(0, 0), 0)
+        self.assertEqual(lg.OR(1, 0), 1)
+        self.assertEqual(lg.OR(0, 1), 1)
+        self.assertEqual(lg.OR(1, 1), 1)
+        self.assertNotEqual(lg.OR(0, 0), 1)
+        self.assertNotEqual(lg.OR(1, 0), 0)
+        self.assertNotEqual(lg.OR(0, 1), 0)
+        self.assertNotEqual(lg.OR(1, 1), 0)
+
     
 if __name__ == "__main__":
     unittest.main()
