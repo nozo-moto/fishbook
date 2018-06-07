@@ -31,5 +31,11 @@ class LogicGate():
         else:
             return 1
 
+    def XOR(self, x1, x2):
+        s1 = self.NAND(x1, x2)
+        s2 = self.OR(x1, x2)
+        return self.AND(s1, s2)
+
+
 if __name__ == "__main__":
     pass
