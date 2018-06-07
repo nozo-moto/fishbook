@@ -1,0 +1,20 @@
+import unittest
+from logic.logic1 import LogicGate
+
+class TestLogicGate(unittest.TestCase):
+    def test_add(self):
+        lg = LogicGate(0.5, 0.5, 0.7)
+        self.assertEqual(lg.AND(0, 0), 0)
+        self.assertEqual(lg.AND(1, 0), 0)
+        self.assertEqual(lg.AND(0, 1), 0)
+        self.assertEqual(lg.AND(1, 1), 1)
+        self.assertNotEqual(lg.AND(0, 0), 1)
+        self.assertNotEqual(lg.AND(1, 0), 1)
+        self.assertNotEqual(lg.AND(0, 1), 1)
+        self.assertNotEqual(lg.AND(1, 1), 0)
+    
+if __name__ == "__main__":
+    unittest.main()
+
+     
+
