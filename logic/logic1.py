@@ -17,6 +17,13 @@ class LogicGate():
         else:
             return 1
 
+    def OR(self, x1, x2):
+        tmp = x1 * (self.w1) + x2 * (self.w2)
+        if tmp <= (0.2):
+            return 0
+        else:
+            return 1
+
 if __name__ == "__main__":
     l = LogicGate(0.5, 0.5, 0.7)
     print(l.AND(0, 0))
